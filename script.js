@@ -89,14 +89,24 @@ ul.addEventListener('click', function(e){
 
         e.target.classList.toggle('fa-square-check');
         e.target.classList.toggle('fa-square');
+
+        console.log(e.target.parentNode);
+        e.target.parentNode.classList.toggle('text-muted');
     }
 
 
 
 });
+const button = document.querySelector('button');
+button.addEventListener('click', function(e){
+    const checkedItems = document.querySelectorAll ('.text-muted');
+    for (let i = 0; i < checkedItems.length; i += 1){
+        checkedItems[i].remove();
+    }
+});
 
 // BONUS LEVEL:
-// add a "Reset" button which clears all of the TO DOs
+// add a "Reset" button which clears all of the TO DOs ✅
 // add a "Remove task" button to each task
 // add a congratulations alter when all of the existing TO DOs are checked off
 // add a "Take a break" message if 5 or more tasks are completed"
